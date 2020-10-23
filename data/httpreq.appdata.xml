@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2019 Your Name <you@email.com> -->
+<component type="desktop">
+  <id>com.github.vipin-dev.httpreq</id>
+  <metadata_license>CC0</metadata_license>
+  <name>HTTP Req</name>
+  <summary>A testing tool for http requests.</summary>
+  <description>
+    <p>Test your Rest APIs using this simple tool.</p>
+  </description>
+</component>

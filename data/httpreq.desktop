@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=HTTPReq
+GenericName=HTTPReq
+Comment=Proves that we can use Vala and Gtk
+Categories=Utility;Education;
+Exec=com.github.vipin-dev.httpreq
+Icon=application-default-icon
+Terminal=false
+Type=Application
+Keywords=HTTP;Requests;REST;
