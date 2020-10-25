@@ -12,7 +12,9 @@ executable(
         dependency('gtk+-3.0'),
         dependency('libsoup-2.4'),
         dependency('gtksourceview-4'),
-        dependency('webkit2gtk-4.0')
+        dependency('webkit2gtk-4.0'),
+        dependency('granite'),
+        dependency('libhandy-1', version: '>=0.83.0')
     ],
     install: true
 )

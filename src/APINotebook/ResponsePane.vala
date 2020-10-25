@@ -19,7 +19,6 @@ class ResponsePane : Gtk.Box {
         text_view.cursor_visible = false;
 
         test_label = new WebKit.WebView ();
-        test_label.load_uri("http://vipindev.com");
         scroll = new Gtk.ScrolledWindow (null, null);
         stack_switcher.valign = Gtk.Align.START;
         stack_switcher.halign = Gtk.Align.START;
@@ -31,8 +30,8 @@ class ResponsePane : Gtk.Box {
         pack_end(stack, true, true);
     }
 
-    public void set_response(string response) {
+    public void set_response(string response, string url) {
         text_view.buffer.text = response;
-        test_label.load_html(response, "http://vipindev.com");
+        test_label.load_html(response, url);
     }
 }

@@ -34,8 +34,15 @@ public class HTTPReq : Gtk.Application {
             default_width = 300,
             title = "HTTPReq"
         };
+
+        var notebooks = new Granite.Widgets.DynamicNotebook();
         var notebook = new APINotebook();
-        main_window.add(notebook);
+        notebooks.new_tab_requested.connect(()=> {
+            notebooks.insert_tab(new Granite.Widgets.Tab("First",null, new APINotebook()),1);
+        });
+        var gtk_headerbar = new Gtk.HeaderBar();
+        notebooks.insert_tab(new Granite.Widgets.Tab("First",null, notebook),0);
+        main_window.add(notebooks);
         main_window.show_all ();
     }
 

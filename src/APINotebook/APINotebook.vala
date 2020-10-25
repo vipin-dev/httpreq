@@ -10,11 +10,14 @@ class APINotebook : Gtk.Paned {
         var scroll = new Gtk.ScrolledWindow (null, null);
         scroll.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
         scroll.add (text_view);
-        requestPane.response.connect((data) => {
-            responsePane.set_response(data);
+        requestPane.response.connect((data, url) => {
+            responsePane.set_response(data, url);
         });
         add1(requestPane);
         add2(responsePane);
     }
     
 }
+
+
+

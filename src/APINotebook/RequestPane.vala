@@ -3,7 +3,7 @@
 class RequestPane : Gtk.Box {
     Gtk.Entry entry;
     Gtk.Button send_button;
-    public signal void response (string data);
+    public signal void response (string data, string url);
     public RequestPane() {
         entry =  new Gtk.Entry() { margin=12};
         send_button = new Gtk.Button.with_label("SEND") { margin = 12 };
@@ -32,7 +32,7 @@ class RequestPane : Gtk.Box {
             while ((line = data_stream.read_line ()) != null) {
                 output = output + line + "\n";
             }
-            response(output);
+            response(output, entry.text);
         } catch (Error e) {
             stderr.printf ("Error: %s\n", e.message);
         }
