@@ -29,11 +29,14 @@ public class HTTPReq : Gtk.Application {
     }
 
     protected override void activate () {
-        var main_window = new Gtk.ApplicationWindow (this) {
-            default_height = 300,
-            default_width = 300,
-            title = "HTTPReq"
-        };
+        Hdy.init();
+        var main_window = active_window;
+        if(main_window == null) {
+            print("Requested window");
+            main_window = new Hdy.ApplicationWindow();
+            main_window.default_width = 600;
+            main_window.default_height = 300;
+        }
 
         var notebooks = new Granite.Widgets.DynamicNotebook();
         var notebook = new APINotebook();
@@ -43,7 +46,8 @@ public class HTTPReq : Gtk.Application {
         var gtk_headerbar = new Gtk.HeaderBar();
         notebooks.insert_tab(new Granite.Widgets.Tab("First",null, notebook),0);
         main_window.add(notebooks);
-        main_window.show_all ();
+        main_window.present();
+        main_window.show_all();
     }
 
     public static int main (string[] args) {

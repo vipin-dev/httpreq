@@ -4,7 +4,8 @@ project('com.github.vipin-dev.httpreq', 'vala', 'c')
 # Create a new executable, list the files we want to compile, list the dependencies we need, and install
 executable(
     meson.project_name(),
-    'src/Application.vala',
+    'src/main.vala',
+    'src/window.vala',
     'src/APINotebook/APINotebook.vala',
     'src/APINotebook/RequestPane.vala',
     'src/APINotebook/ResponsePane.vala',
@@ -14,7 +15,7 @@ executable(
         dependency('gtksourceview-4'),
         dependency('webkit2gtk-4.0'),
         dependency('granite'),
-        dependency('libhandy-1', version: '>=0.83.0')
+        dependency('libhandy-1')
     ],
     install: true
 )
